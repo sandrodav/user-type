@@ -1,0 +1,365 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/usertypes": {
+      "post": {
+        "summary": "Creates a usertype",
+        "tags": [
+          "new"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "params",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "usertype created"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      },
+      "get": {
+        "summary": "Retrieves all usertypes",
+        "tags": [
+          "index"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usertype found"
+          }
+        }
+      }
+    },
+    "/usertypes/{id}": {
+      "get": {
+        "summary": "Retrieves a usertype",
+        "tags": [
+          "show"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "integer",
+            "schema": {
+              "type": "integer",
+              "required": [
+                "id"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "name found"
+          },
+          "404": {
+            "description": "usertype not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update usertype ",
+        "tags": [
+          "update"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "params",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "name found"
+          },
+          "404": {
+            "description": "usertype not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete usertype",
+        "tags": [
+          "destroy"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "integer",
+            "schema": {
+              "type": "integer",
+              "required": [
+                "id"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Destroy usertype"
+          },
+          "404": {
+            "description": "usertype not found"
+          }
+        }
+      }
+    },
+    "/users": {
+      "post": {
+        "summary": "Creates a user",
+        "tags": [
+          "users"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "params",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string"
+                },
+                "fname": {
+                  "type": "string"
+                },
+                "lname": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "birthday": {
+                  "type": "string"
+                },
+                "type_id": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "fname",
+                "lname",
+                "username",
+                "email",
+                "password",
+                "birthday",
+                "type_id"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "usertype created"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      },
+      "get": {
+        "summary": "show all usertypes",
+        "tags": [
+          "users"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usertype found"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "summary": "Retrieves a user",
+        "tags": [
+          "users"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "integer",
+            "schema": {
+              "type": "integer",
+              "required": [
+                "id"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "name found"
+          },
+          "404": {
+            "description": "usertype not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update usertype ",
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "params",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string"
+                },
+                "fname": {
+                  "type": "string"
+                },
+                "lname": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "birthday": {
+                  "type": "string"
+                },
+                "type_id": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "fname",
+                "lname",
+                "username",
+                "email",
+                "birthday",
+                "type_id"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "name found"
+          },
+          "404": {
+            "description": "usertype not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete user",
+        "tags": [
+          "users"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "integer",
+            "schema": {
+              "type": "integer",
+              "required": [
+                "id"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Destroy user"
+          },
+          "404": {
+            "description": "usertype not found"
+          }
+        }
+      }
+    }
+  }
+}
