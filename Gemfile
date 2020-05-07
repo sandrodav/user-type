@@ -31,7 +31,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'redis-rails'
 
 gem 'jwt'
-gem 'sorcery', '~> 0.12.0'
+gem 'sorcery', '~> 0.15.0'
 gem 'device_detector'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
